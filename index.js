@@ -10,7 +10,7 @@ import defaultBrowser from 'default-browser';
 import isInsideContainer from 'is-inside-container';
 
 // Path to included `xdg-open`.
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = __dirname ?? path.dirname(fileURLToPath(import.meta.url));
 const localXdgOpenPath = path.join(__dirname, 'xdg-open');
 
 const {platform, arch} = process;

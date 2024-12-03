@@ -247,6 +247,14 @@ const baseOpen = async options => {
 		cliArguments.push(options.target);
 	}
 
+	// instead of spawning a new child process,
+	// we return the spawn arguments.
+	return {
+		command,
+		cliArguments,
+		childProcessOptions,
+	}
+
 	const subprocess = childProcess.spawn(command, cliArguments, childProcessOptions);
 
 	if (options.wait) {
